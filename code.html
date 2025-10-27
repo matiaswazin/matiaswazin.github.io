@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario Divertido</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #a8edea, #fed6e3);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            text-align: center;
+            color: #ff6b6b;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #4ecdc4;
+        }
+        input[type="text"], select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus, select:focus {
+            border-color: #ff6b6b;
+            outline: none;
+        }
+        select {
+            background: #fff;
+        }
+        button {
+            padding: 12px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        .emoji {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Cuestionario Divertido! 🎉</h1>
+        <form id="questionnaire">
+            <label for="name">¿Cuál es tu nombre?</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="animal">¿Cuál es tu animal favorito?</label>
+            <input type="text" id="animal" name="animal" required>
+
+            <label for="serie">¿Qué serie marcó tu infancia?</label>
+            <input type="text" id="serie" name="serie" required>
+
+            <label for="musica">¿Qué género de música eliminarías de este mundo?</label>
+            <input type="text" id="musica" name="musica" required>
+
+            <label for="comida">¿Qué comida podrías comer todos los días sin aburrirte?</label>
+            <input type="text" id="comida" name="comida" required>
+
+            <label for="eleccion">¿Tacos, pizza o sushi? (elige sabiamente 😏)</label>
+            <select id="eleccion" name="eleccion" required>
+                <option value="">Selecciona una opción</option>
+                <option value="tacos">Tacos</option>
+                <option value="pizza">Pizza</option>
+                <option value="sushi">Sushi</option>
+            </select>
+
+            <label for="juguete">¿Qué juguete de tu niñez quisieras tener otra vez?</label>
+            <input type="text" id="juguete" name="juguete" required>
+
+            <button type="submit">Enviar Respuestas <span class="emoji">🚀</span></button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('questionnaire').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que se recargue la página
+            
+            // Obtener las respuestas
+            const name = document.getElementById('name').value;
+            const animal = document.getElementById('animal').value;
+            const serie = document.getElementById('serie').value;
+            const musica = document.getElementById('musica').value;
+            const comida = document.getElementById('comida').value;
+            const eleccion = document.getElementById('eleccion').value;
+            const juguete = document.getElementById('juguete').value;
+            
+            // Mostrar un mensaje simple con las respuestas
+            alert(`¡Gracias por responder, ${name}!\n\nTu animal favorito es: ${animal}\nSerie que marcó tu infancia: ${serie}\nGénero de música a eliminar: ${musica}\nComida diaria: ${comida}\nElección sabia: ${eleccion}\nJuguete deseado: ${juguete}\n\n¡Qué respuestas tan geniales! 😄`);
+        });
+    </script>
+</body>
+</html>
